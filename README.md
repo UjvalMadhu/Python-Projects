@@ -8,3 +8,4 @@ However you can also use any of the many IDEs that support python to run all of 
 ### Content:
 1. TIC TAC TOE : This is the classic tic tac toe game that is designed to be played by two players or played with the computer. The code is simple and covers some of the general functions used in python.
 2. BLACKJACK : This is a classic card game that is played against the computer. The code is a little more complex and covers classes, functions, stlye formating and most of the general functions in pythons.
+3. Simple Text to Speech program: A program that utilises the gTTS(Google text to speech) library to say a personalised greeting message to users.
