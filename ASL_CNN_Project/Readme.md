@@ -14,11 +14,11 @@ This project implements a Convolutional Neural Network (CNN) for image classific
 
 The CNN architecture consists of:
 
-3 Convolutional layers with batch normalization and ReLU activation
-Max pooling layers after each convolution
-Dropout for regularization
-2 Fully connected layers
-Output layer with 24 classes (ASL letters)
+- 3 Convolutional layers with batch normalization and ReLU activation
+- Max pooling layers after each convolution
+- Dropout for regularization
+- 2 Fully connected layers
+- Output layer with 24 classes (ASL letters)
 
 
 
