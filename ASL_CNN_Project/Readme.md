@@ -44,7 +44,3 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 </p>
 
 
-
-      ![NVIDIA DLI Logo](ASL_CNN_Project/Images/DLI_Header.png)
-
-
