@@ -4,7 +4,11 @@ This project implements a Convolutional Neural Network (CNN) for image classific
 
 **Dataset**: The ASL MNIST dataset contains 27,455 training and 7,172 test images of hand signs representing digits. Each image is 28x28 pixels grayscale. The dataset only includes 24 classes of alphabets as J and Z require movement of the fingers and hence cannot be represented by an image.
 
+
+
     ![ASL](https://github.com/UjvalMadhu/Python-Projects/blob/main/ASL_CNN_Project/Images/DLI_Header.png?raw=true)
+
+
 
 ## Model Architecture
 
@@ -16,7 +20,11 @@ Dropout for regularization
 2 Fully connected layers
 Output layer with 24 classes (ASL letters)
 
+
+
     ![ASL CNN Model Architecture](./Images/cnn.png)
+
+
 
 ## Requirements
 
@@ -34,4 +42,8 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 ## Acknowledgements
 - This Project was done based on instructions and examples provided by NVIDIA Deep Learning Insitute
 
-      ![NVIDIA DLI Logo](./Images/DLI_Header.png)
+
+
+      ![NVIDIA DLI Logo](/Images/DLI_Header.png)
+
+
