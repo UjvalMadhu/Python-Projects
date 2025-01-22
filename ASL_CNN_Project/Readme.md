@@ -3,7 +3,7 @@
 <p>This project implements a Convolutional Neural Network (CNN) for image classification using PyTorch. The model architecture consists of three convolutional layers followed by fully connected layers, designed to classify images into 24 different categories. </p>
 <p>**Dataset**: The ASL MNIST dataset contains 27,455 training and 7,172 test images of hand signs representing digits. Each image is 28x28 pixels grayscale. The dataset only includes 24 classes of alphabets as J and Z require movement of the fingers and hence cannot be represented by an image. </p>
 
-    ![ASL](./Images/asl.png)
+    ![ASL](https://github.com/UjvalMadhu/Python-Projects/blob/main/ASL_CNN_Project/Images/DLI_Header.png)
 
 ## Model Architecture
 
