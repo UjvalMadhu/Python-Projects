@@ -44,6 +44,6 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 
 
 
-      ![NVIDIA DLI Logo](/Images/DLI_Header.png)
+      ![NVIDIA DLI Logo](https://github.com/UjvalMadhu/Python-Projects/blob/07eb4677869176400043a4f5c0ca9d0d57ae20e2/ASL_CNN_Project/Images/DLI_Header.png)
 
 
