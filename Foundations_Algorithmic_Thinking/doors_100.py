@@ -14,12 +14,12 @@
 
 #==========================================================================================================================
 
-doors = [False] * 100
+doors = [False] * 100                         # Create 100 doors and store their states
 
-for i in range(0, 100):
-    for i in range(i, 100, i+1):
+for i in range(0, 100):                       # Iterate from 0 to 99
+    for i in range(i, 100, i+1):              # Iterate as the desired sequence
         doors[i] = not doors[i]
 
-for i in range(0, 100):
+for i in range(0, 100):                       # Print open doors
     if doors[i] is True:
         print(i+1, end = ", ")
