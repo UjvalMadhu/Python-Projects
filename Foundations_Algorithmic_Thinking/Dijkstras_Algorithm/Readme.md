@@ -23,7 +23,7 @@ Finally the graph structure and a table containing the shortest distances are di
 ## Output:
 
 <p>
-    <img = src = "./Output.png", width = "630" height = "520">
+    <img = src = "./Output.png", width = "730" height = "520">
 </p>
 
 ## License
