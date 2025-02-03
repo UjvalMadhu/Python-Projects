@@ -16,7 +16,7 @@ Finally, the graph structure and a table containing the shortest distances are d
 The following flow chart can analyze the Dijkstra's Algorithm:
 
 <p>
-    <img = src = "./Dijstras_Algorithm.png", width = "200" height = "520">
+    <img = src = "./Dijkstras_Algorithm.png", width = "200" height = "520">
 </p>
 
 ### Program Structure:
