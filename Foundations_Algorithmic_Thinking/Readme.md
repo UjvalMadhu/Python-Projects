@@ -15,7 +15,6 @@ This folder contains various python programs that were created as part of the on
 | 5 | Dijkstra's Algorithm | This Project demonstrates the Dijkstra's Algorithm to find the shortest distance from a Graph data structure  |
 
 
-
 ## License
 
 This project is licensed under the GNU General Public License, Version 3 - see the [LICENSE.md](../LICENSE.md) file for details.
