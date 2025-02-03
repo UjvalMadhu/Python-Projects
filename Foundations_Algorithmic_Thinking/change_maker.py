@@ -1,6 +1,8 @@
-# Project: Change Make
-# The goal of this project is, when given a set of denominations of currency and a target value, to come up with combination 
+# Project: Change Maker
+# The goal of this project is, when given a set of denominations of currency and a target value, to come up with a combination 
 # using the least amount of denomination to make the target value
+# This is a greedy Algorithm as as we do not go back and revisit our choice and assumes that the highest denomination selected
+# is always the best, in this particular problem however it will work.
 # Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python
 
 # Author: Ujval Madhu
