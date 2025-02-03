@@ -18,8 +18,7 @@ jupyter_env/
 */.ipynb_checkpoints/*
 
 # Windows
-*.Zone.Identifier
-*:Zone.Identifier
+*Zone.Identifier
 
 # IDE
 .vscode/
