@@ -14,14 +14,16 @@ Finally the graph structure and a table containing the shortest distances are di
 ### Program Structure:
 
 
---Dijkstras1.py (main file)
-
+- Dijkstras1.py (main file)
+- - Section to develop the graph structure and visualize it
+- - Function for Dijkstra;s Algorithm on any graph structure
+- - Section to create the table of shortest distances 
 
 
 ## Output:
 
 <p>
-    <img = src = "./Output.png", width = "480" height = "370">
+    <img = src = "./Output.png", width = "630" height = "520">
 </p>
 
 ## License
