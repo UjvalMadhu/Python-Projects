@@ -19,6 +19,7 @@ jupyter_env/
 
 # Windows
 *.Zone.Identifier
+*:Zone.Identifier
 
 # IDE
 .vscode/
