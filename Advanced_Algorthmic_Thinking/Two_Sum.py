@@ -1,9 +1,10 @@
 # Project: Two Sum
-# Given an integer list find pairs of distinct indices in the list were the elements add up to a required sum
+# Given an integer list find pairs of distinct indices in the list were the elements add up to a required sum.
+# This implementation follows a Brute Force Approach
 # Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python
 
 # Author: Ujval Madhu
-# C-Log: 26th Jan 2025
+# C-Log: 6th Mar 2025
 #==========================================================================================================================
 
 def two_sum(list, target):
