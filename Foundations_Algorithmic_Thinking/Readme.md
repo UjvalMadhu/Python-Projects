@@ -1,6 +1,7 @@
 # Project Name: Foundations of Algorithmic Thinking using Python
 
 This folder contains various Python programs that were created as part of the online course Foundations of Algorithmic Thinking.
+All code is my own but were inspired from the examples provided from the course.
 
 ### Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python
 
