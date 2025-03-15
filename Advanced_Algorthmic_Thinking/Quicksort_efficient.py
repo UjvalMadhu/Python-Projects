@@ -19,7 +19,8 @@ class Sorter:
     # Haore's Partition Implelmentation
     def _h_partition(self, arr: list, lo: int, hi: int) -> int:
 
-        pivot = arr[(hi+lo)//2]
+        #pivot = arr[(hi+lo)//2]
+        pivot = arr[lo]
         i = lo
         j = hi
 
@@ -28,11 +29,14 @@ class Sorter:
             while (arr[i] < pivot and i < hi):
                 i+=1
             
-            while (arr[j] > pivot and j > lo):
+            while (arr[j] >= pivot and j > lo):
                 j-=1
             
             if i >= j:
                 return j
+            # elif i == j:
+            #     j-=1
+            #     return j
             
             arr[i], arr[j] = arr[j], arr[i]
 
@@ -56,7 +60,7 @@ class Sorter:
     
     
 # Testing Algorithm
-
+# Randomized Testing
 for i in range(100):
 
     arr = [random.randint(0,10) for x in range(random.randint(5,10))]
@@ -68,7 +72,9 @@ for i in range(100):
     test_arr = sorted(arr)
     qS_array = s1.sort(arr)
 
-    assert qS_array == test_arr, "Test id: "+str(i)+",original array:"+str(original_array)+" Arry sorting error, obtained array: " + str(qS_array) +" , Required array: " + str(test_arr)
+    assert qS_array == test_arr, "Test id: "+str(i)+",original array:"+str(original_array)+" Array sorting error, obtained array: " + str(qS_array) +" , Required array: " + str(test_arr)
+
+# Manual Testing
 
 arr = [60, 27, 0, 18, 36, 75, 78]
 s1 = Sorter()
