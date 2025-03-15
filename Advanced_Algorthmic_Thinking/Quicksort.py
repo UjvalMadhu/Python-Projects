@@ -1,11 +1,15 @@
-# Project: Quicksort Algorithm
-# Given an integer list find pairs of distinct indices in the list were the elements add up to a required sum.
-# This implementation follows a Brute Force Approach
-# Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python
-
-# Author: Ujval Madhu
-# C-Log: 6th Mar 2025
-#==========================================================================================================================
+#==========================================================================================================
+# Project: Quicksort Algorithm                                                                            |
+# This is an implementation of the quicksort algorithm using the Hoare Partition Scheme which is much     |
+# more efficient due to inplace movement of elements and fewer swaps.                                     |
+#                                                                                                         |
+# Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python            |
+#                                                                                                         |
+# Author: Ujval Madhu                                                                                     |
+# C-Log: 6th Mar 2025                                                                                     |
+# All code is original and written by the Author                                                          |
+# Copyright 2025 Ujval Madhu, All rights reserved                                                         |
+#==========================================================================================================
 
 import random
 
@@ -13,12 +17,13 @@ def quicksort_algorithm(array):
 
     l = len(array)
     pivot = l//2
-    arr_l = []
+    arr_l = []           
     arr_p = []
     arr_h = []
     sorted_array = []
 
     if l > 1:
+    
 
         for i in range(0,l):
             if array[i] > array[pivot]:
