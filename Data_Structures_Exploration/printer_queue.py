@@ -15,7 +15,8 @@
 #///   it under the terms of the GNU General Public License as published by       ///
 #///   the Free Software Foundation, either version 3 of the License, or          ///
 #///   (at your option) any later version.                                        ///
-#///                                                                              ///
+#///                                            
+#                                   ///
 #///   This program is distributed in the hope that it will be useful,            ///
 #///   but WITHOUT ANY WARRANTY; without even the implied warranty of             ///
 #///   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              ///
@@ -77,7 +78,7 @@ def printDocuments(documents):
         name = task[0]
         copies = task[1]
         ptime = int(copies)*2
-        result.append("Document "+name+" printed in "+str(ptime)+"minutes")
+        result.append("Document "+name+" printed in "+str(ptime)+" minutes")
     
     print(result)
 
