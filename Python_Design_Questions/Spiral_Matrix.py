@@ -1,21 +1,18 @@
 #////////////////////////////////////////////////////////////////////////////////////
 #///                                                                              ///
-#///                          Sorted Linked Lists                                 ///
+#///                             Spiral Matrix                                    ///
 #///                                                                              ///
 #////////////////////////////////////////////////////////////////////////////////////
 #///                                                                              ///
-#///   This program implements a linked list structure, with capabilities, to     ///
-#///   insert elements in a sorted manner from a random list, search for elements ///
-#///   and delete duplicate values if required.                                   ///
+#///   Given a mxn matrix, return all elements of matrix in spiral order          ///
+#///   m == row, n = columns, 1 <= m,n <=10, -100 <= matrix[i][j] <= 100          ///
 #///                                                                              ///
-#///   Acknowledgement: Ryan Mitchel, Python Data Structures: Linked Lists Course ///
 #///                                                                              ///
 #///   Copyright (C) 2025 Ujval Madhu,                                            ///
 #///   This program is free software: you can redistribute it and/or modify       ///
 #///   it under the terms of the GNU General Public License as published by       ///
 #///   the Free Software Foundation, either version 3 of the License, or          ///
 #///   (at your option) any later version.                                        ///
-#///                                                                              ///
 #///                                                                              ///
 #///   This program is distributed in the hope that it will be useful,            ///
 #///   but WITHOUT ANY WARRANTY; without even the implied warranty of             ///
@@ -28,73 +25,77 @@
 #////////////////////////////////////////////////////////////////////////////////////
 #//  CVS Log
 #//
-#//  Id: linked_lists.py, v 1.0
+#//  Id: spiral_matrix.py, v 1.0
 #//
-#//  $Date: 2025-3-19
+#//  $Date: 2025-3-27
 #//  $Revision: 1.0 
 #//  $Author:  Ujval Madhu
 
-class Node:
-    def __init__(self,data):
-        self.data = data
-        self.next = None
+def spiral_matrix(matrix):
 
-class LinkedLists:
-    def __init__(self):
-        self.head = None
-
-    def is_empty(self):
-        return self.head is None
+    if not matrix:
+        return []
     
-    def append(self, data):
-        new_node = Node(data)
-
-        if not self.head:
-            self.head = new_node
-            return
-
-        current = self.head
-        while current.next:
-            current = current.next
-        current.next = new_node
+    m = len(matrix)
+    try:
+        n = len(matrix[0])
+    except:
+        print(matrix)
+        return matrix
     
-    def search(self, data):                       # Checks whether an element is present in the Linked List
-        current = self.data
-        while current:
-            if current.data == data:
-                return True
-            current = current.next
-        return False
-    
-    def delete(self, data):
-        current = self.head
-        while current.next:
-            if current.data == data:
-                current.data = current.next.data
-                current.next = current.next.next
-                return
-            current = current.next
+    top = 0 
+    bottom = m-1
+    left = 0
+    right = n-1
+    spiral = []
+    total = m*n
+    while top <= bottom and left <= right:
+
+        for i in range(left, right + 1):
+            print(matrix[top][i],"->", end = "")
+            spiral.append(matrix[top][i])
+            total -=1
+        top += 1
+
+        if(total != 0):
+            for j in range(top, bottom + 1):
+                print(matrix[j][right],"->", end = "")
+                spiral.append(matrix[j][right])
+                total -=1
+            right -= 1
         
-        return
-    
-    def print(self):
-        output =[]
-        current = self.head
-        while current is not None:
-            output.append(str(current.data))
-            current = current.next
-        print('->'.join(output))
+        if(total != 0):
+            for i in range(right, left -1, -1):
+                print(matrix[bottom][i],"->", end = "")
+                spiral.append(matrix[bottom][i])
+                total-=1
+            bottom -= 1
 
-
-ll1 = LinkedLists()
-dl = [1,5,7,9,3,1,3]
-
-for item in dl:
-    ll1.append(item)
+        if(total != 0):
+            for j in range(bottom, top - 1, -1):
+                print(matrix[j][left],"->", end = "")
+                spiral.append(matrix[j][left])
+                total -=1
+            left += 1
         
-ll1.print()
+        # print("\n")
+        # print("top:", top, ", bottom:", bottom,", left:",left, ", right:", right)
+    
+    print(spiral)
 
-ll1.delete(5)
 
-print('hi')
-ll1.print()
+mtx = [[1,2,3],[4,5,6],[7,8,9]]
+mtx2 = [1]
+mtx3 = [1, 2, 3]
+mtx4 = [[1],[2],[3]]
+mtx5 = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+
+spiral_matrix(mtx)
+spiral_matrix(mtx2)
+spiral_matrix(mtx3)
+spiral_matrix(mtx4)
+spiral_matrix(mtx5)
+
+
+    
+
