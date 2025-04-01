@@ -37,6 +37,7 @@
 
 
 import random
+import traceback
 
 
 # 1. Quick Sort, O(nlogn)
@@ -83,18 +84,88 @@ def merge(left, right):
     return result
 
 
+# Heap Sort O(nlogn)
+def heap_sort(arr):
+    n = len(arr)
+
+    # Building Max Heap
+    for i in range(n//2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    
+    for i in range(n-1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(arr, i , 0)
+
+    return arr
+
+def heapify(arr, n , i):
+    largest = i
+    left = 2*i + 1
+    right = 2*i + 2
+
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+    
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+
 
 array = [random.randint(1,25) for x in range(0,10)]
 
 array1 = quick_sort(array)
 array2 = merge_sort(array)
+array5 = heap_sort(array)
 
 print("Original Array :"+ str(array))
 
 print("Quick Sorted Array: "+ str(array1))
 print("Merge Sorted Array: "+ str(array2))
+print("Heap Sorted Array: "+ str(array5))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Revision
 def quick_sort2(arr):
 
     if len(arr)<= 1:
@@ -107,3 +178,64 @@ def quick_sort2(arr):
 
     return quick_sort(left) +quick_sort(middle) + quick_sort(right)
 
+array3 = quick_sort2(array)
+print(f"Rev quick_sort {str(array3)}")
+
+def merge_sort2(arr):
+
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = merge_sort2(arr[:mid])
+    right = merge_sort2(arr[mid:])
+
+    return merge2(left, right)
+
+def merge2(left, right):
+
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+
+      
+        try:
+            if left[i] <= right[j]:
+                result.append(left[i])
+                i+=1
+            else:
+                result.append(right[j])
+                j+=1  
+  
+        except Exception as e:
+            traceback.print_exc()
+            print("left: "+str(left) +" , right: "+str(right) +", len(len): "+str(len(left)) +", len(right): "+str(len(right)) +"")
+            exit()
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+array4 = merge_sort2(array)
+print(f"Rev Merge_sort {str(array4)}")
+
+def heap_sort2(arr):
+    if len(arr) <= 1:
+        return arr
+    
+
+
+
+def heapify2(arr, n, i):
+    largest = i
+    left = 2*i + 1
+    right = 2*i + 2
+
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify2(arr, n, largest)
