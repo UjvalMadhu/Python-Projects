@@ -223,9 +223,14 @@ print(f"Rev Merge_sort {str(array4)}")
 def heap_sort2(arr):
     if len(arr) <= 1:
         return arr
-    
+    n = len(arr)
 
+    for i in range(n//2 -1, -1):
+        heapify2(arr, n, i)
 
+    for i in range(n-1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify2(arr, i, 0)
 
 def heapify2(arr, n, i):
     largest = i
