@@ -84,7 +84,7 @@ def merge(left, right):
     return result
 
 
-# Heap Sort O(nlogn)
+# Heap Sort O(nlogn) in place algorithm
 def heap_sort(arr):
     n = len(arr)
 
@@ -96,6 +96,8 @@ def heap_sort(arr):
     for i in range(n-1, 0, -1):
         arr[0], arr[i] = arr[i], arr[0]
         heapify(arr, i , 0)
+
+
 
     return arr
 
@@ -117,19 +119,39 @@ def heapify(arr, n , i):
 
 
 array = [random.randint(1,25) for x in range(0,10)]
+print("Original Array :"+ str(array))
 
 array1 = quick_sort(array)
-array2 = merge_sort(array)
-array5 = heap_sort(array)
 
-print("Original Array :"+ str(array))
+# print("Original Array :"+ str(array))
+array2 = merge_sort(array)
+
+# print("Original Array :"+ str(array))
+# array5 = heap_sort(array)
+
+# print("Original Array :"+ str(array))
 
 print("Quick Sorted Array: "+ str(array1))
 print("Merge Sorted Array: "+ str(array2))
-print("Heap Sorted Array: "+ str(array5))
+# print("Heap Sorted Array: "+ str(array5))
 
 
 
+# Bubble Sort O(n^2) time complexity
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n- i -1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+
+array5 = bubble_sort(array)
+print("Bubble Sorted Array: "+ str(array5))
 
 
 
@@ -182,12 +204,40 @@ def quick_sort2(arr):
 array3 = quick_sort2(array)
 print(f"Rev quick_sort {str(array3)}")
 
-#def merge_sort2(arr):
+
+def merge_sort2(arr):
+    if(len(arr) <= 1):
+        return arr
+    
+    mid = len(arr) // 2
+
+    left = merge_sort2(arr[:mid])
+    right = merge_sort2(arr[mid:])
+
+    return merge(left,right)
+
+def merge(left, right):
+
+    result = []
+    i, j = 0,0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        elif left[i] > right[j]:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
 
 
-
-# array4 = merge_sort2(array)
-# print(f"Rev Merge_sort {str(array4)}")
+array4 = merge_sort2(array)
+print(f"Rev Merge_sort {str(array4)}")
 
 # def heap_sort2(arr):
+
+print("Original Array :"+ str(array))
 
