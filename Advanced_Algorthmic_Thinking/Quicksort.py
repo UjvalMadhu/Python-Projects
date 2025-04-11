@@ -1,7 +1,6 @@
 #==========================================================================================================
 # Project: Quicksort Algorithm                                                                            |
-# This is an implementation of the quicksort algorithm using the Hoare Partition Scheme which is much     |
-# more efficient due to inplace movement of elements and fewer swaps.                                     |
+# This is an implementation of the quicksort algorithm.                                                   |
 #                                                                                                         |
 # Acknowledgement: Robin Andrews, Compucademy, Foundations of Algorithmic Thinking with Python            |
 #                                                                                                         |
