@@ -5,12 +5,12 @@
 #////////////////////////////////////////////////////////////////////////////////////
 #///                                                                              ///
 #///   This Program demonstrates various sorting algorithm implementation         ///
-#///   The Algorithms Include:
-#///   1. Quick Sort (Fastest for random data)
-#///   2. Merge Sort (For Stability)                                                                           ///
-#///   3. Heap Sort  (Consistent Performance)
-#///   4. Bubble Sort
-#///   5. Insertion Sort (For Nearly sorted Data)
+#///   The Algorithms Include:                                                    ///
+#///   1. Quick Sort (Fastest for random data)                                    ///
+#///   2. Merge Sort (For Stability)                                              ///
+#///   3. Heap Sort  (Consistent Performance)                                     ///
+#///   4. Bubble Sort                                                             ///
+#///   5. Insertion Sort (For Nearly sorted Data)                                 ///
 #///                                                                              ///
 #///   Copyright (C) 2025 Ujval Madhu,                                            ///
 #///   This program is free software: you can redistribute it and/or modify       ///
