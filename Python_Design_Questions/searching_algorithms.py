@@ -10,7 +10,7 @@
 #///   2. Binary Search                                                           ///
 #///   3. Depth First Search                                                      ///
 #///   4. Breath First Search                                                     ///
-#///   5. A-Star                                                                  ///
+#///   5. Dijkstra's Algorithm                                                    ///
 #///                                                                              ///
 #///   Copyright (C) 2025 Ujval Madhu,                                            ///
 #///   This program is free software: you can redistribute it and/or modify       ///
@@ -34,7 +34,7 @@
 #//  $Date: 2025-04-11
 #//  $Revision: 1.0 
 #//  $Author:  Ujval Madhu
-
+import collections
 # Linear Search
 def linear_search(arr, item):
     for i in range(len(arr)):
@@ -44,6 +44,7 @@ def linear_search(arr, item):
 
 # Binary Search
 def binary_search(arr, item):
+    arr = merge_sort(arr)
     left = 0
     right = len(arr) -1
 
@@ -58,4 +59,121 @@ def binary_search(arr, item):
             return mid
     
     return None
+
+# Merge sort for sorting in Binary Search
+
+def merge_sort(arr):
+    if(len(arr)<= 1):
+        return arr
+    
+    mid = len(arr) // 2
+
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left,right)
+
+def merge(left, right):
+    i,j = 0,0
+    result = []
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i+=1
+        else:
+            result.append(right[j])
+            j+=1
+    
+    result.extend(left[i:])
+    result.extend(right[j:])
+
+    return result
+
         
+# Depth First Search
+# Explore as far as possible along each branch and then backtrack
+
+def dfs(graph, start_node, visited = None):
+    if visited is None:
+        visited = set()
+    visited.add(start_node)
+    print(f"Visiting node: {start_node}")
+    for neighbor in graph[start_node]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+    return list(visited)
+
+# Breadth First Search
+# Explores Nodes level by level, all immediate first then next level and so on.
+def bfs(graph, start_node):
+    visited = set()
+    queue = collections.deque([start_node])
+    visited.add(start_node)
+
+    while queue:
+        node = queue.popleft()
+        print(node, end = " ")
+
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+
+# Testing DFS and BFS
+graph = {
+    'A' : ['B', 'C'],
+    'B' : ['A', 'D', 'E'],
+    'C' : ['E', 'G', 'F'],
+    'D' : ['F', 'A'],
+    'E' : ['G', 'D', 'A'],
+    'F' : ['A', 'C'],
+    'G' : ['B', 'D'],
+}
+print("Depth First Search")
+dfs(graph, 'A')
+print("Breadth First Search")
+bfs(graph,'A')
+
+
+# Dijkstra's Algorithm
+import heapq
+def dijkstra(graph, start):
+    distances = {node : float('inf') for node in graph}
+    distances[start] = 0
+    pq = [(0, start)]
+    visited_nodes = set()
+
+    while pq:
+        dist, node = heapq.heappop(pq)
+
+        if node in visited_nodes:
+            continue
+
+        visited_nodes.add(node)
+
+        for neighbor, weight in graph.get(node, {}).items():
+            if neighbor not in visited_nodes:
+                n_dist = weight + dist
+
+                if n_dist < distances[neighbor]:
+                    distances[neighbor] = n_dist
+                    heapq.heappush(pq, (n_dist, neighbor))
+    
+    return distances
+
+# Testing
+
+# Defining the Required Graph
+graph_dj = {
+    'A': {'B': 6, 'D': 1},
+    'B': {'A': 6, 'D': 2, 'E': 2, 'C':5},
+    'C': {'B': 5, 'E': 5},
+    'D': {'A': 1, 'B': 2, 'E': 1},
+    'E': {'B': 2, 'D': 1, 'C': 5}
+}
+
+print("\nDijkstra's Algorithm")
+
+print(dijkstra(graph_dj, 'A'))
